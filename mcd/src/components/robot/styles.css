@@ -1,0 +1,40 @@
+.robot {
+    width: 50px;
+    height: 50px;
+}
+.north{
+    width: 10px;
+    height: 10px;
+    transform: rotate(-90deg);
+
+}
+
+.south{
+    width: 10px;
+    height: 10px;
+    transform: rotate(90deg);
+
+}
+.east{
+    width: 10px;
+    height: 10px;
+}
+
+.west{
+    width: 10px;
+    height: 10px;
+    transform: rotate(180deg);
+
+}
+
+.imgRobot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgRobotColumn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

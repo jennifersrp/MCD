@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`If Robot is render imgRobot is render 1`] = `ShallowWrapper {}`;
+
+exports[`Robot component not crush 1`] = `ShallowWrapper {}`;
+
+exports[`Robot component not crush 2`] = `ShallowWrapper {}`;

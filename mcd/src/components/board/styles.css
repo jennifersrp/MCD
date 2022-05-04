@@ -1,0 +1,121 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+h1 {
+	font-size: 16px;
+}
+
+#tablero {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-direction: row;
+	height: 400px;
+	margin: 10px;
+}
+select{
+	width: 100%;
+}
+
+.inputs {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+label {
+	font-size: 14px;
+}
+
+button {
+	white-space: nowrap;
+	width: 96px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	align-self: center;
+}
+
+select {
+	margin-bottom: 1%;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-top: 4%;
+}
+
+.rowFilters {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding-left: 4%;
+	padding-right: 4%;
+
+}
+#reportLabel{
+	padding-right: 5px;
+}
+#report{
+	font-size: 14px;
+}
+.rowTitle {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 20px;
+	align-items: center;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.columns {
+	display: flex;
+	flex-direction: column;
+	margin: 1px;
+	justify-self: center;
+	width: 80px;
+	justify-content: center;
+};
+
+.square {
+	display: flex;
+	background: white;
+	width: 50px;
+	height: 50px;
+	margin: 1px;
+	justify-content: center;
+}
+
+#tablero span {
+	display: flex;
+	background: white;
+	width: 80px;
+	height: 80px;
+	margin: 1px;
+	justify-content: center;
+}
+
+.wall{
+	font-size: 50px;
+	text-align: center;
+	justify-content: center;
+	vertical-align: middle;
+	color: black;
+}
