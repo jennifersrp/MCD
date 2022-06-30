@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Robot from '../robot';
+import Robot from '../Robot';
+import Header from '../Header';
 import './styles.css'
 
 const Board = () => {
@@ -20,7 +21,7 @@ const Board = () => {
     const [state, setState] = useState([])
     const [position, setPosition] = useState()
     const [robotPosition, setRobotPosition] = useState()
-    const [wallPosition, setWallPosition] = useState([])
+    const [wallPosition] = useState([])
     const [reportActive, setReportActive] = useState(false)
     const [coordinates, setCoordinates] = useState()
     const [direction, setDirection] = useState()
@@ -32,7 +33,9 @@ const Board = () => {
         setReportActive(false)
     }
 
+    //Buttons
     const placeRobot = () => {
+        console.log(state.row,state.row && state.column && state.facing)
         if (!state.row) {
             setPosition("1,1")
         } else if (state.row && state.column && state.facing &&
@@ -42,19 +45,6 @@ const Board = () => {
             setPosition(`${state.row},${state.column}`)
         }
 
-    }
-
-
-    const placeWall = () => {
-        if (state.row && state.column) {
-            let temp = `${state.row},${state.column}`
-            if (temp !== position && wallPosition.indexOf(temp) === -1) {
-                setWallPosition([
-                    ...wallPosition,
-                    `${state.row},${state.column}`
-                ]);
-            }
-        }
     }
 
     const turnRobot = () => {
@@ -121,7 +111,6 @@ const Board = () => {
             default:
                 console.log('default');
         }
-
         if (
             wallPosition.indexOf(`${item&&item.target.value},${item2&&item2.target.value}`) === -1
         ) {
@@ -134,16 +123,7 @@ const Board = () => {
 
     return (
         <div>
-            <div className='rowTitle'>
-                <h1>Toy Robot Game</h1>
-                <div>
-                    <label id="reportLabel">Report:</label>
-                    <span id="report">
-                        {reportActive ?
-                            `${position},${robotPosition}` : ""}
-                    </span>
-                </div>
-            </div>
+            <Header reportActive={reportActive} position={position} robotPosition={robotPosition}/>
             <div id="tablero">
                 {[1, 2, 3, 4, 5].map((y, e) => {
                     return <div key={y} className="columns">
@@ -180,7 +160,7 @@ const Board = () => {
                                     <select id={input.name} onChange={(e) => onChange(e)}>
                                         {directions.map((direct, i) =>
                                             <option value={state.facing || direct.name}
-                                                selected={state.facing === direct.name && true}
+                                                defaultValue={state.facing === direct.name && true}
                                                 key={i}>{state.facing || direct.name}</option>
                                         )}
                                     </select>
@@ -193,12 +173,11 @@ const Board = () => {
                         <button id="move" onClick={() => moveButton()}>Move</button>
                     </div>
                     <div className='row'>
-                        <button id="placeWall" onClick={() => placeWall()}>Place wall</button>
                         <button id="reportButton" onClick={() => { position && setReportActive(!reportActive) }}>Report</button>
                     </div>
                     <label>Direction</label>
                     <select id="direction" onChange={(e) => setDirection(e.target.value)}>
-                        {["LEFT/RIGHT", "LEFT", "RIGHT"].map((direct, i) =>
+                        {["LEFT", "RIGHT"].map((direct, i) =>
                             <option value={direct} key={i}>{direct}</option>
                         )}
                     </select>

@@ -1,0 +1,17 @@
+
+#reportLabel{
+	padding-right: 5px;
+}
+#report{
+	font-size: 10px;
+}
+.rowTitle {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 20px;
+	align-items: center;
+}
